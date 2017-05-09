@@ -4,7 +4,7 @@ public class TicTacToeBoard
 
 	private int vectors [] [] =
 	    {
-		   {0, 1, 2},    // Row 1
+               {0, 1, 2},    // Row 1
 	       {3, 4, 5},    // Row 2
 	       {6, 7, 8},    // Row 3
 	       {0, 3, 6},    // Column 1
