@@ -1,8 +1,7 @@
 public class TicTacToeBoard{
 	private int board [];
 
-	private int vectors [][] =
-	    {
+	private int vectors [][] = {
                {0, 1, 2},
 	       {3, 4, 5},
 	       {6, 7, 8},
@@ -21,7 +20,7 @@ public class TicTacToeBoard{
 		board = new int[] {2, 2, 2, 2, 2, 2, 2, 2, 2};
 	}
 //==============================================================================
-	private int getSquare(int index){
+	private int verifySquare(int index){
 		if (index < 0 || index > 8){
 		    throw new IllegalArgumentException("index must be 0-9");
                 }
@@ -29,12 +28,12 @@ public class TicTacToeBoard{
 		return board[index];
 	}
 
-	public int getSquare(String square){
+	public int verifySquare(String square){
 		int index = mapSquareToIndex(square);
 		if (index == -1){
 			throw new IllegalArgumentException("Invalid square");
                 }
-                switch (getSquare(index)){
+                switch (verifySquare(index)){
 			case 3:
 				return 1;
 			case 5:
@@ -95,15 +94,15 @@ public class TicTacToeBoard{
 	}
 
 //==============================================================================
-	public void playAt(String square, int player){
+	public void playedAt(String square, int player){
 		int index = mapSquareToIndex(square);
 		if (index == -1){
 			throw new IllegalArgumentException("Invalid square");
                 }
-		this.playAt(index, player);
+		this.playedAt(index, player);
 	}
 
-	private void playAt(int index, int player){
+	private void playedAt(int index, int player){
 		if (index < 0 || index > 8){
 		    throw new IllegalArgumentException("Square must be 0-8");
                 }

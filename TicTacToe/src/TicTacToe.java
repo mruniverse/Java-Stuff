@@ -56,7 +56,7 @@ public class TicTacToe extends JFrame{
 	}
 //==============================================================================
 	private void btnClick(ActionEvent e, String square){
-                if (board.getSquare(square) != 0){
+                if (board.verifySquare(square) != 0){
 			return;
                 }
                 
@@ -64,7 +64,7 @@ public class TicTacToe extends JFrame{
 		btn.setText("X");
 
 
-		board.playAt(square, 1);
+		board.playedAt(square, 1);
 
 		if (board.isGameOver() == 3){
 			JOptionPane.showMessageDialog(null,
@@ -83,10 +83,9 @@ public class TicTacToe extends JFrame{
 		}
 
 		String computerMove = board.getNextMove();
-		board.playAt(computerMove,2);
+		board.playedAt(computerMove,2);
 
-		switch (computerMove)
-		{
+		switch (computerMove){
 			case "A1":
                             btnA1.setText("O");
                             break;
@@ -125,8 +124,7 @@ public class TicTacToe extends JFrame{
 		}
 	}
 //==============================================================================
-	private void resetGame()
-	{
+	private void resetGame(){
 		board.reset();
 		btnA1.setText("");
 		btnA2.setText("");
