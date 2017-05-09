@@ -34,8 +34,14 @@ public class TicTacToeBoard{
 		if (index == -1){
 			throw new IllegalArgumentException("Invalid square");
                 }
-		
-                return board[index];
+                switch (getSquare(index)){
+			case 3:
+				return 1;
+			case 5:
+				return 2;
+			default:
+				return 0;
+		}
 	}
 //==============================================================================
 	private int mapSquareToIndex(String square){

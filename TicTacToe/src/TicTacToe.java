@@ -56,7 +56,10 @@ public class TicTacToe extends JFrame{
 	}
 //==============================================================================
 	private void btnClick(ActionEvent e, String square){
-
+                if (board.getSquare(square) != 0){
+			return;
+                }
+                
 		JButton btn = (JButton)e.getSource();
 		btn.setText("X");
 
