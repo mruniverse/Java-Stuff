@@ -1,15 +1,11 @@
 package jogodavelha;
-/**
- *
- * @author Vitor
- */
+
 public class Velha extends Jogador{
     private Jogador jogador1;
     private Jogador jogador2;
     public char a1, a2, a3, b1, b2, b3, c1, c2, c3;
 
     public Velha(){
-        super();
         this.jogador1 = new Jogador();
         this.jogador2 = new Jogador();
         this.a1 = ' ';
@@ -45,34 +41,46 @@ public class Velha extends Jogador{
     
     public String verificaJogo(){
         if (isRowWon(a1, a2, a3)) {
-            return "Velha";
+            return "Vencedor !";
         }
         if (isRowWon(b1, b2, b3)) {
-            return "Velha";
+            return "Vencedor !";
         }
         if (isRowWon(c1, c2, c3)) {
-            return "Velha";
+            return "Vencedor !";
         }
         if (isRowWon(a1, b1, c1)) {
-            return "Velha";
+            return "Vencedor !";
         }
         if (isRowWon(a2, b2, c2)) {
-            return "Velha";
+            return "Vencedor !";
         }
         if (isRowWon(a3, b3, c3)) {
-            return "Velha";
+            return "Vencedor !";
         }
         if (isRowWon(a1, b2, c3)) {
-            return "Velha";
+            return "Vencedor !";
         }
         if (isRowWon(a3, b2, c1)) {
-            return "Velha";
+            return "Vencedor !";
         }
         return "Proximo";
     }
     
     public boolean isRowWon(char a, char b, char c) {
-        return ((a == b) & (a == c) & (a != ' '));
+        return ((a == b) && (a == c) && (a != ' '));
+    }
+    
+    void reiniciar(){
+        this.a1 = ' ';
+        this.a2 = ' ';
+        this.a3 = ' ';
+        this.b1 = ' ';
+        this.b2 = ' ';
+        this.b3 = ' ';
+        this.c1 = ' ';
+        this.c2 = ' ';
+        this.c3 = ' ';
     }
 }
 
